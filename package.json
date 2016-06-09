@@ -1,0 +1,31 @@
+{
+  "name": "petrie",
+  "version": "1.0.0",
+  "description": "Front-End Build System Bootstrap",
+  "author": "Franky Martinez <frankymartz@gmail.com>",
+  "license": "MIT",
+  "main": "gulpfile.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrankyMartz/petrie.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FrankyMartz/petrie/issues"
+  },
+  "homepage": "https://github.com/FrankyMartz/petrie#readme",
+  "keywords": [
+    "bootstrap",
+    "web",
+    "foundation",
+    "frontend",
+    "build",
+    "gulpjs"
+  ],
+  "scripts": {
+    "dev": "gulp",
+    "stage": "gulp --env stage",
+    "prod": "gulp --env prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
