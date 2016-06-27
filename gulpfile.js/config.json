@@ -1,0 +1,74 @@
+{
+  "root": {
+    "src": "./src",
+    "dest": "./public",
+    "manifest": "rev-manifest.json"
+  },
+
+
+  "server": {
+    "proxy": "<CraftCMS Server IP, ex. localhost:80>",
+    "port": 1337
+  },
+
+
+  "html": {
+    "src": "./craft/templates",
+    "extension": ["html"]
+  },
+
+
+  "css": {
+    "src": "style",
+    "dest": "style",
+    "extension": ["sass", "scss", "css"],
+    "sass": {
+      "outputStyle": "compact",
+      "lineNumbers": true,
+      "precision": 10,
+      "includePaths": [
+        "./node_modules/normalize.css"
+      ]
+    },
+    "autoprefixer": {
+      "browsers": ["last 3 version"]
+    },
+    "csso": {
+      "restructure": false,
+      "debug": false
+    }
+  },
+
+
+  "js": {
+    "src": ["script", "script/page"],
+    "dest": "script",
+    "common": "script/common.json",
+    "uglify": {
+      "mangle": false
+    }
+  },
+
+
+  "image": {
+    "src": "image",
+    "dest": "image",
+    "extension": ["jpg", "png", "svg", "gif"],
+    "imagemin": {
+      "progressive": true,
+      "interlaced": true,
+      "svgoPlugins": [
+        { "removeUselessStrokeAndFill": false },
+        { "removeViewBox": false },
+        { "removeTitle": true }
+      ]
+    }
+  },
+
+
+  "font": {
+    "src": "font",
+    "dest": "font",
+    "extension": ["woff2", "woff", "eot", "ttf", "svg"]
+  }
+}
