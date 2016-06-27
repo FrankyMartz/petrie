@@ -84,6 +84,14 @@ public
 
 tags
 *.swp
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-workspace
+*.sublime-project
+_notes
 
 
 # Credential ===================================================================
