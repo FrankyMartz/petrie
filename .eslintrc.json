@@ -1,0 +1,80 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true,
+    "jquery": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+  },
+  "rules": {
+
+    "no-bitwise": [
+      "error"
+    ],
+
+    "camelcase": [
+      "error"
+    ],
+
+    "curly": [
+      "error",
+      "all"
+    ],
+
+    "eqeqeq": ["error"],
+
+    "wrap-iife": [
+      "error",
+      "any"
+    ],
+
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+
+    "indent": [
+      "error",
+      2
+    ],
+
+    "new-cap": [
+      "error"
+    ],
+
+    "no-caller": [
+      "error"
+    ],
+
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+
+    "quotes": [
+      "error",
+      "single",
+      "avoid-escape"
+    ],
+
+    "semi": [
+      "error",
+      "always"
+    ],
+
+    "strict": [
+      "error",
+      "safe"
+    ]
+  }
+}
