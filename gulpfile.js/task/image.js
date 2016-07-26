@@ -18,6 +18,7 @@ var gChange = require('gulp-changed');
 var gRev = require('gulp-rev');
 var buffer = require('vinyl-buffer');
 var noop = gUtil.noop;
+var gImageMin = require('gulp-imagemin');
 
 
 /* Environment ============================================================== */
@@ -27,7 +28,7 @@ var IS_DEV = Boolean(global.env === 'dev');
 
 var SRC_BASE = path.join(process.cwd(), CONFIG.root.src);
 var SRC = path.join(CONFIG.root.src, CONFIG.image.src, '**/*.{' + CONFIG.image.extension + '}');
-var DEST = path.join(CONFIG.root.dest, CONFIG.image.dest);
+var DEST = path.join(CONFIG.root.dest);
 
 // Gulp-Rev requires Absolute URLs
 var MANIFEST_BASE = path.join(process.cwd(), CONFIG.root.dest);
@@ -39,6 +40,7 @@ var MANIFEST = path.join(MANIFEST_BASE, CONFIG.root.manifest);
 gulp.task('image', function(){
   gulp.src(SRC, { base: SRC_BASE })
     .pipe(gChange(DEST))
+    .pipe(IS_DEV ? noop() : gImageMin(CONFIG.image.imagemin))
     .pipe(IS_DEV ? noop() : buffer())
     .pipe(IS_DEV ? noop() : gRev())
     .pipe(gulp.dest(DEST))
