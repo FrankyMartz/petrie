@@ -7,8 +7,11 @@
 
 
   "server": {
+    "notify": false,
+    "browser": "google chrome",
+    "logPrefix": "<Application Name>",
     "proxy": "<CraftCMS Server IP, ex. localhost:80>",
-    "port": 1337
+    "open": true
   },
 
 

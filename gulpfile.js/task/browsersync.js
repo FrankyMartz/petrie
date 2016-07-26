@@ -18,23 +18,17 @@ var bsServer = require('browser-sync').create();
 /* Environment ============================================================== */
 
 var CONFIG = require('../config.json');
-var SERVER_NAME = require('../../package.json').name;
+var browserSyncConfig = CONFIG.server;
 
 
 /* GulpJS =================================================================== */
 
 gulp.task('browsersync', function(){
-  bsServer.init({
-    notify: false,
-    browser: 'google chrome',
-    logPrefix: SERVER_NAME,
-    open: false,
-    port: CONFIG.server.port,
-    proxy: CONFIG.server.proxy,
-  });
+  bsServer.init(browserSyncConfig);
 });
 
 
 /* Module =================================================================== */
 
 module.exports = bsServer;
+
