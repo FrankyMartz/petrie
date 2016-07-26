@@ -26,6 +26,7 @@ var watchify = require('watchify');
 var gEslint = require('gulp-eslint');
 var gUglify = require('gulp-uglify');
 var collapse = require('bundle-collapser/plugin');
+var debowerify = require('debowerify');
 
 var noop = gUtil.noop;
 var helper = require('./helper.js');
@@ -73,6 +74,8 @@ function compile(entry) {
     forIn(allExternalUrl, function(value){
       b.external(value);
     });
+
+    b.transform(debowerify, { preferNPM:true });
 
     var lintStream = lint();
 

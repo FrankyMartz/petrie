@@ -13,11 +13,18 @@ var path = require('path');
 var gUtil = require('gulp-util');
 var bowerResolve = require('bower-resolve');
 var npmResolve = require('resolve');
+var localResolve = require('resolve');
 var es = require('event-stream');
 
 var isString = require('lodash/isString');
 var isArray = require('lodash/isArray');
 var assign = require('lodash/assign');
+
+
+/* Environment ============================================================== */
+
+var CONFIG = require('../../config.json');
+
 
 /* Function ================================================================= */
 
@@ -33,7 +40,8 @@ function getAllPackageUrl(allPackageUrl){
   if (!allPackageUrl || !isString(allPackageUrl)) {
     return;
   }
-  var normalizeURL = path.resolve(__dirname, '../../../', allPackageUrl);
+  var projectRootURL = path.resolve(__dirname, '../../../');
+  var normalizeURL = path.resolve(projectRootURL, allPackageUrl);
   var vendorList = require(normalizeURL);
   var allVendorPackage = {};
   vendorList.forEach(function(id){
@@ -44,6 +52,17 @@ function getAllPackageUrl(allPackageUrl){
       try {
         url = bowerResolve.fastReadSync(id);
       } catch (e) {
+        try {
+          var vendorURL = path.resolve(
+            projectRootURL,
+            CONFIG.root.src,
+            CONFIG.js.src[0],
+            'vendor'
+          );
+          url = localResolve(id, { cwd: vendorURL });
+        } catch (e) {
+          /* handle error */
+        }
         gUtil.log('Browserify Resolve Error:', id, url, e);
       }
     }
