@@ -1,8 +1,11 @@
 {
   "libs": [
     "browser",
+    "chai",
     "ecma5",
-    "jquery"
+    "ecma6",
+    "jquery",
+    "underscore"
   ],
   "loadEagerly": [
   ],
@@ -11,6 +14,6 @@
     "doc_comment": {
       "strong": true
     },
-    "complete_strings": {}
+    "es_modules": {}
   }
 }

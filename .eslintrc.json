@@ -1,0 +1,88 @@
+{
+  "root": true,
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "globalReturn": true,
+      "impliedStrict": true,
+      "jsx": false,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "shared-node-browser": true,
+    "es6": true,
+    "mocha": true,
+    "jquery": true
+  },
+  "globals": {
+  },
+  "rules": {
+    "no-bitwise": [
+      "error"
+    ],
+
+    "camelcase": [
+      "error"
+    ],
+
+    "curly": [
+      "error",
+      "all"
+    ],
+
+    "eqeqeq": ["error"],
+
+    "wrap-iife": [
+      "error",
+      "any"
+    ],
+
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+
+    "new-cap": [
+      "error"
+    ],
+
+    "no-caller": [
+      "error"
+    ],
+
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+
+    "quotes": [
+      "error",
+      "single",
+      "avoid-escape"
+    ],
+
+    "semi": [
+      "error",
+      "always"
+    ],
+
+    "strict": [
+      "error",
+      "safe"
+    ]
+  }
+}
